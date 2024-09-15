@@ -1,0 +1,290 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "system-ui";
+}
+
+
+.contact-section,
+#projects,
+.education-section,
+footer {
+  margin: 50px;
+}
+.section-title,
+.card-body,
+.about-wrapper,
+table, .project-title {
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+
+header {
+  backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.5);
+  position: fixed;
+  width: calc(100%);
+  top: 0;
+  z-index: 100;
+  
+}
+
+/* Navigation Menu's */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+nav > ul {
+  display: flex;
+  gap: 20px;
+}
+nav > ul > li {
+  list-style-type: none;
+  position: relative;
+}
+nav > ul > li:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: black;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s ease;
+}
+nav > ul > li:hover:after {
+  width: 100%;
+}
+a {
+  text-decoration: none;
+}
+.socia-media-icon {
+  letter-spacing: 10px;
+}
+
+/* About section */
+.about-section {
+  padding: 50px 20px;
+  background: url("https://wallpaperaccess.com/full/5651990.jpg") no-repeat
+    center center fixed;
+  background-size: cover;
+  /* width: 100%; */
+  height: 100vh;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+}
+.about-wrapper > button {
+  width: 200px;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  background: transparent;
+}
+.about-section h1::first-letter {
+  font-size: 4em;
+  font-weight: bold;
+  color: #ffd700;
+  float: left;
+  margin-right: 8px;
+  line-height: 1;
+}
+
+.mobile-nav-icon {
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+/* Education Section */
+.table-section {
+  overflow-x: auto;
+}
+th {
+  font-size: 1.5rem;
+  padding-bottom: 10px;
+}
+table {
+  width: 100%;
+}
+table,
+tr,
+td {
+  border-bottom: 1px solid black;
+  border-collapse: collapse;
+  padding: 20px;
+}
+tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(50px);
+}
+/* Projects Section */
+.project-section {
+  display: flex;
+  gap: 20px;
+  justify-content: space-around;
+}
+
+.card {
+  width: 300px;
+  height: auto;
+  overflow: hidden;
+  background-color: rgba(100, 150, 190, 0.5);
+  backdrop-filter: blur(5px);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 30px;
+  border-radius: 20px;
+  transition: all 0.3s linear;
+}
+
+.project-section:hover .card {
+  filter: blur(5px);
+}
+
+.card:hover {
+  filter: none;
+  cursor: pointer;
+  transform: scale(1.2);
+}
+.project-section:hover .card:hover {
+  filter: none;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card button {
+  width: 8rem;
+  padding: 0.5em;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  background: linear-gradient(white, white),
+    linear-gradient(
+      90deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(9, 9, 121, 1) 35%,
+      rgba(0, 212, 255, 1) 100%
+    );
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .about-wrapper {
+    width: 90%;
+    padding: 20px;
+  }
+  .mobile-nav-icon {
+    display: block;
+  }
+
+  nav > ul {
+    flex-direction: column;
+  }
+  .nav.active {
+    display: block;
+  }
+  #navbar {
+    flex-direction: column;
+    display: none;
+  }
+
+  #navbar.active {
+    display: block;
+    transition: all 0.5s ease, opacity 0.5s ease;
+  }
+  .project-section {
+    flex-direction: column;
+  }
+  .card {
+    width: auto;
+  }
+}
+@media (max-width: 600px) {
+  .name-field,
+  .mobile-field {
+    grid-column: 1/3;
+  }
+  .contact-section,
+  #projects,
+  .education-section,
+  footer {
+    margin: 1rem;
+  }
+}
+/* Contact Section */
+.contact-section {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+}
+.form-field {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-content: center;
+  gap: 20px;
+}
+.name-field,
+.mobile-field {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+.message-field {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+}
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+.submit-field {
+  grid-column: span 2;
+  text-align: center;
+}
+.submit-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
