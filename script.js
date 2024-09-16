@@ -9,8 +9,3 @@ addEventListener("click", function (event) {
     navMenu.classList.toggle("active");
   }
 });
-console.log(1);
-const number = [1, 2, 3, 45];
-const [a, b] = number;
-console.log(a, b)
-

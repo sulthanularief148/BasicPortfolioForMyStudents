@@ -223,6 +223,13 @@ tr:nth-child(even) {
 
 /* Mobile view */
 @media (max-width: 768px) {
+  .about-section {
+    flex-direction: column;
+    height: 100vh;
+  }
+  .about-image-section {
+    display: none;
+  }
   .about-wrapper {
     width: 90%;
     padding: 20px;
@@ -251,6 +258,10 @@ tr:nth-child(even) {
   }
   .card {
     width: auto;
+  }
+  .image-caption::first-letter,
+  .about-section h1 {
+    font-size: 2rem;
   }
 }
 @media (max-width: 600px) {
