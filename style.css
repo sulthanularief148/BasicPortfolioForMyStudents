@@ -1,9 +1,8 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "system-ui";
+  font-family: "Stylish", serif;
 }
-
 
 .contact-section,
 #projects,
@@ -14,7 +13,8 @@ footer {
 .section-title,
 .card-body,
 .about-wrapper,
-table, .project-title {
+table,
+.project-title {
   text-align: center;
 }
 
@@ -30,7 +30,6 @@ header {
   width: calc(100%);
   top: 0;
   z-index: 100;
-  
 }
 
 /* Navigation Menu's */
@@ -74,7 +73,7 @@ a {
   background: url("https://wallpaperaccess.com/full/5651990.jpg") no-repeat
     center center fixed;
   background-size: cover;
-  /* width: 100%; */
+  gap: 50px;
   height: 100vh;
   color: white;
   display: flex;
@@ -86,25 +85,57 @@ a {
   flex-direction: column;
   gap: 20px;
   align-items: center;
-  width: 80%;
-  max-width: 600px;
-  margin: 0 auto;
+  /* width: 50%; */
+  /* max-width: 600px; */
   padding: 40px;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 8px;
+}
+.about-image-section {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  perspective: 1000px;
+}
+.about-image-section img {
+  border-radius: 50%;
+  transform-style: preserve-3d;
+  transition: transform 2s linear;
+}
+.about-image-section img:hover {
+  cursor: pointer;
+  transform: rotateY(180deg);
 }
 .about-wrapper > button {
   width: 200px;
   padding: 20px;
   border-radius: 10px;
-  color: white;
-  background: transparent;
+  color: black;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 3s ease-in;
+}
+.about-wrapper > button:hover {
+  background: linear-gradient(white, white),
+    linear-gradient(
+      90deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(9, 9, 121, 1) 35%,
+      rgba(0, 212, 255, 1) 100%
+    );
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+.image-caption::first-letter,
+.about-section h1 {
+  font-weight: 900;
+  font-size: 3rem;
 }
 .about-section h1::first-letter {
   font-size: 4em;
   font-weight: bold;
   color: #ffd700;
-  float: left;
   margin-right: 8px;
   line-height: 1;
 }
