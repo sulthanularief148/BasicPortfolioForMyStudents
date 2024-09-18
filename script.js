@@ -3,8 +3,6 @@ addEventListener("click", function (event) {
   const navMenu = document.getElementById("navbar");
   console.log(navIcon)
 
-
-
   if (navIcon.contains(event.target)) {
     navMenu.classList.toggle("active");
   }
