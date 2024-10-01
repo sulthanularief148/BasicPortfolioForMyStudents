@@ -33,10 +33,9 @@ To run this project locally, you'll need to have a web browser and a text editor
 
    Navigate to the project directory:
 
-bash
-Copy code
-cd your-repo-name
-Open the index.html file in your web browser.
+   ```bash
+   cd your-repo-name
+   Open the index.html file in your web browser.
 
 # Contact
  - Email: sulthanularief148@gmail.com
