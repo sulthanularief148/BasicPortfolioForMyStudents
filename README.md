@@ -34,9 +34,9 @@ To run this project locally, you'll need to have a web browser and a text editor
    Navigate to the project directory:
 
    ```bash
-   cd your-repo-name
+   cd BasicPortfolioForMyStudents.git
    Open the index.html file in your web browser.
 
 # Contact
  - Email: sulthanularief148@gmail.com
- - GitHub: [your-github-profile](https://github.com/sulthanularief148/)
+ - GitHub: [My-github-profile](https://github.com/sulthanularief148/)
