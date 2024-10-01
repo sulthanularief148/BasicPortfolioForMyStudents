@@ -19,7 +19,8 @@
       href="https://fonts.googleapis.com/css2?family=Stylish&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
   <body>
     <header>
@@ -31,9 +32,9 @@
       <nav id="navbar">
         <div>
           <img
-            src="logo.png"
+            src="./assets/images/logo.png"
             alt="Company Logo"
-            title="Company Logo"
+            title="Arief Logo"
             width="50"
             height="50"
           />
@@ -66,10 +67,12 @@
       <!-- About section -->
       <section id="about" class="about-section">
         <div class="about-wrapper">
-          <h1 class="herosection-head">
-            Passionate <mark>Software Developer </mark>with Strong Background in
+          <h1 id="text-typed"></h1>
+          <!-- <h1 class="herosection-head">
+            Passionate
+            <span id="typed-text"><mark> </mark></span>with Strong Background in
             Web and Mobile Applications
-          </h1>
+          </h1> -->
           <p>
             Dedicated to Delivering High-Quality Solutions that Exceed Client
             Expectations. Crafting Dynamic and User-Friendly Applications.
@@ -79,7 +82,7 @@
         <div class="about-image-section">
           <figure>
             <img
-              src="arief.png"
+              src="./assets/images/arief.png"
               alt="my-image"
               title="SUlthanul Arief - Software Developer"
             />
@@ -123,30 +126,36 @@
       <section id="projects">
         <h2 class="section-title">Projects</h2>
         <div class="project-section">
-          <article class="card">
+          <article class="card" data-aos="fade-right" data-aos-delay="50">
             <div class="card-head">
               <figure>
                 <img
-                  src="https://media.istockphoto.com/id/1310710228/photo/american-football-ball-and-helmet-on-the-grass-of-football-arena-or-stadium.jpg?b=1&s=170667a&w=0&k=20&c=-Q2dKXNxJsnLofKpctOehJvel-lgC3gmkOWb0vJJ2bg="
-                  alt="Image description for Project 1"
+                  src="./assets/images/grocery-project.png"
+                  alt="Grocery Project"
                 />
-                <!-- Optional caption -->
-                <!-- <figcaption>Description of the image if needed</figcaption> -->
               </figure>
-              <h3 class="project-title">Project 1</h3>
+
+              <h3 class="project-title">Grocery App</h3>
             </div>
             <div class="card-body">
               <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem
-                maxime eos, aut ab, voluptatibus veritatis odit, recusandae
-                eveniet fugit asperiores voluptas similique veniam nostrum
-                facere quos explicabo molestias! Est, maiores?
+                My project is a sleek and modern single-page website built using
+                HTML and Tailwind CSS. This website showcases my skills in
+                creating a visually appealing and user-friendly interface using
+                the latest front-end technologies.
               </p>
-              <button>Read More</button>
+              <div class="project-link">
+                <a
+                  href="https://sulthanularief148.github.io/Grocery-app"
+                  target="_blank"
+                  href=""
+                  >Grocery Page</a
+                >
+              </div>
             </div>
           </article>
 
-          <article class="card">
+          <article class="card" data-aos="fade-right" data-aos-delay="50">
             <div class="card-head">
               <figure>
                 <img
@@ -165,11 +174,13 @@
                 eveniet fugit asperiores voluptas similique veniam nostrum
                 facere quos explicabo molestias! Est, maiores?
               </p>
-              <button>Read More</button>
+              <div class="project-link">
+                <a href="./projects/projects.html" target="_blank">Javascript Projects</a>
+              </div>
             </div>
           </article>
 
-          <article class="card">
+          <article class="card" data-aos="fade-right" data-aos-delay="50">
             <div class="card-head">
               <figure>
                 <img
@@ -188,17 +199,31 @@
                 eveniet fugit asperiores voluptas similique veniam nostrum
                 facere quos explicabo molestias! Est, maiores?
               </p>
-              <button>Read More</button>
+              <div class="project-link">
+                <a href="">Read More</a>
+              </div>
             </div>
           </article>
         </div>
       </section>
 
       <!-- Contact Section -->
-      <section id="contact" class="contact-section">
+      <section
+        id="contact"
+        class="contact-section"
+        data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="true"
+      >
         <h2 class="section-title">Contact Me</h2>
 
-        <form action="./success.html">
+        <form
+          onsubmit="handleSubmit((e) => {e.preventDefault()})"
+          action="./success.html"
+        >
           <div class="form-field">
             <div class="name-field">
               <label for="name">Name:</label>
@@ -231,7 +256,7 @@
               ></textarea>
             </div>
             <div class="submit-field">
-              <button class="submit-button" type="submit">Submit</button>
+              <button class="submit-button" type="submit" onclick="handleClick()">Submit</button>
             </div>
           </div>
         </form>
@@ -240,7 +265,27 @@
     <footer>
       <p class="section-title">© 2024 Copyright, All Right Reserved By Arief</p>
     </footer>
-
-    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <!-- Load library from the CDN -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+      
+      var header = new Typed("#text-typed", {
+        strings: [
+          "Hello, I'm Sulthanul Arief, a Web Developer",
+          "Greetings!, I Specialized in React Development",
+        ],
+        typeSpeed: 70,
+        loop: true,
+        backSpeed: 50,
+        backDelay: 700,
+        showCursor: true,
+      });
+    </script>
+    <script src="./script/script.js"></script>
   </body>
 </html>

@@ -1,0 +1,7 @@
+main {
+    margin: 100px;
+}
+article.card {
+    flex-basis: 20% !important;
+    flex: 1;
+}
